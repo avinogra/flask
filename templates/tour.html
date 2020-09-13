@@ -8,6 +8,8 @@
 </head>
 
 {% set number = ix | int %}
+{% set dept = {"nsk": "Новосибирска",  "spb": "Петребурга", "kazan": "Казани","ekb": "Екатеринбурга",  "msk": "Москвы"} %}
+{%set departure= dept[name.get(number).get("departure")]  %}
 <body>
   <header class="container mt-3">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,7 +42,8 @@
     <section class="mt-3 pb-5">
       <h1 class="display-3 mt-4">{{name.get(number).get("title") }}</h1>
       <!-- HERO -->
-      <p class="lead">Индия Из Новосибирска 5 ночей</p>
+      <p class="lead">{{name.get(number).get("country") }} Из 
+        {{departure }} {{name.get(number).get("nights") }} ночей</p>
       <img src={{name.get(number).get("picture") }} class="w-75" alt="">
       <p class="my-4 w-75">{{name.get(number).get("description") }}</p>
       <a href="#" class="btn btn-success btn-lg">Купить тур за {{name.get(number).get("price") }}</a>
