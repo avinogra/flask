@@ -196,6 +196,7 @@ def render_departures(departure):
 def render_tours(id):
     return render_template('tour.html', name=tours, ix=id)
 
-t=tours.get(1)
-print(t.get("title"))
-app.run()
+
+if __name__ == '__main__':
+    app.run()
+# app.run(debug=True)
